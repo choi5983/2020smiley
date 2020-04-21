@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smiley Face Demo</title>
+
+	<style type="text/css">
+		body{
+			background-color:black;
+			color:white;
+		}
+
+		div.game{
+			position:relative;
+			border:1px solid white;
+			width:550px;
+			height:550px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Smiley Game</h1>
+	<div class='game'>
+		<img id='character' style="position:absolute; top:50px; left:50px"; src='happy.png' />
+	</div>
+</body>
+
+<script>
+
+	// Homework:
+	// 1. Modify this game so that pressing "W" moves the character up
+	// 2. Modify this game so that pressing "S" moves the character down
+	// 3. Prevent the character moving outside the box.
+
+	var x = 50;
+	var y = 50;
+
+	document.onkeypress = function (e) {
+		
+		console.log('keyCode is', e.keyCode);
+
+		//if A is pressed
+		if(e.keyCode == 97){
+			x = x - 10;
+		}
+		//if D is pressed
+		else if(e.keyCode == 100){
+			x = x + 10;
+		}
+		console.log('x is now', x);
+
+		document.getElementById("character").style.left = x + "px";
+	}
+
+
+</script>
+
+</html>
